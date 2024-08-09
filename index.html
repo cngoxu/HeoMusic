@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HeoMusic - 用音乐感染人心</title>
+  <title>Music - 用音乐感染人心</title>
   <link rel="stylesheet" type="text/css" href="./css/APlayer.min.css">
   <link rel="stylesheet" type="text/css" href="./main.css">
   <link rel="icon" type="image/x-icon" href="./img/icon.webp">
@@ -22,12 +22,38 @@
     //   var s = document.getElementsByTagName("script")[0]; 
     //   s.parentNode.insertBefore(hm, s);
     // })();
-  </script>    
+  </script>
+  <style>
+    #mySidenav a {
+      position: absolute;
+      right: -70px;
+      transition: 0.3s;
+      padding: 5px;
+      width: 80px;
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      border-radius: 5px 0 0 5px;
+    }
+    
+    #mySidenav a:hover {
+      right: 0;
+    }
+    
+    #about {
+      top: 20px;
+      background-color: #2196F3;
+    }
+</style>   
 </head>
 <body>
 <div id="music_bg"></div>
 <div id="heoMusic-page">
 </div>
+<div id="mySidenav" class="sidenav">
+    <a href="https://cngo.rr.nu" target="_blank" id="about">▶关于</a>
+</div>
+
 <script>
   var userId = "8152976493";
   var userServer = "netease";

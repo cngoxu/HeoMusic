@@ -175,7 +175,7 @@ body #nav-music {
 
 #heoMusic-page .aplayer-info .aplayer-music .aplayer-author,
 #heoMusic-page .aplayer-info .aplayer-music .aplayer-title {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
 }
@@ -184,6 +184,7 @@ body #nav-music {
   overflow: auto;
   /*padding-top: 30%;*/
   height: 50vh; /*var(--vh);*/
+  margin-top: 1vh;
   mask-image: linear-gradient(to bottom, #000, #000, #000, #000, #000, #000, #000, #000, #000, #000, #0000, #0000);
 }
 
@@ -192,7 +193,7 @@ body #nav-music {
 }
 
 #heoMusic-page .aplayer-info .aplayer-lrc p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 44px;
   height: 44px;
   margin-bottom: 0px;
@@ -639,7 +640,7 @@ body .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon.apla
   }
 
   #heoMusic-page .aplayer-info .aplayer-lrc p {
-    font-size: 16px;
+    font-size: 20px;
     /* margin-bottom: 38px;
     line-height: 42px;
     height: 42px; */
