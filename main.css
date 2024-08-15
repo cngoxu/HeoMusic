@@ -200,7 +200,7 @@ body #nav-music {
   color: #fff;
   font-weight: unset; /*bold*/
   text-align: left;
-  filter: blur(2px);
+  /* filter: blur(2px); */
   opacity: 0.3;
   transition: all 0.9s cubic-bezier(0.56, 0.17, 0.22, 0.76);
   user-select:none;
