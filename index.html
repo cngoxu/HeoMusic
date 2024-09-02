@@ -1,82 +1,144 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music - 用音乐感染人心</title>
-  <link rel="stylesheet" type="text/css" href="./css/APlayer.min.css">
-  <link rel="stylesheet" type="text/css" href="./main.css">
-  <link rel="icon" type="image/x-icon" href="./img/icon.webp">
-  <link rel="apple-touch-icon" href="./img/icon-r.webp">
-  <meta name="apple-mobile-web-app-title" content="音乐">
-  <link rel="bookmark" href="./img/icon.webp">
-  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="./img/icon-r.webp">
-  <meta name="description" content="一个简单好用的音乐播放器。">
-  <link rel="manifest" href="/manifest.json">
-  <script>
-    // var _hmt = _hmt || [];
-    // (function() {
-    //   var hm = document.createElement("script");
-    //   hm.src = "https://hm.baidu.com/hm.js?321add3ca0f106525da5526375001161";
-    //   var s = document.getElementsByTagName("script")[0]; 
-    //   s.parentNode.insertBefore(hm, s);
-    // })();
-  </script>
-  <style>
-    #mySidenav a {
-      position: absolute;
-      right: -70px;
-      transition: 0.3s;
-      padding: 5px;
-      width: 80px;
-      text-decoration: none;
-      font-size: 20px;
-      color: white;
-      border-radius: 5px 0 0 5px;
-    }
-    
-    #mySidenav a:hover {
-      right: 0;
-    }
-    
-    #about {
-      top: 20px;
-      background-color: #2196F3;
-    }
-</style>   
-</head>
-<body>
-<div id="music_bg"></div>
-<div id="heoMusic-page">
-</div>
-<div id="mySidenav" class="sidenav">
-    <a href="https://cngo.rr.nu" target="_blank" id="about">▶关于</a>
-</div>
 
-<script>
-  var meting_api='https://api.obdo.cc/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r';
-  var userId = "8152976493";
-  var userServer = "netease";
-  var userType = "playlist";
-  // var localMusic = [{
-  //     name: '重生之我在异乡为异客',
-  //     artist: '王睿卓',
-  //     url: '/music/重生之我在异乡为异客.mp3',
-  //     cover: '/music/重生之我在异乡为异客.png',
-  //     lrc: '/music/重生之我在异乡为异客.lrc'
-  // },
-  // {
-  //     name: '落',
-  //     artist: '唐伯虎',
-  //     url: '/music/落.mp3',
-  //     cover: '/music/落.png',
-  //     lrc: '/music/落.lrc'
-  // }
-  // ];
-  // var remoteMusic = "./musiclist.json"
-</script>
-<script src="./js/APlayer.min.js"></script>
-<script async data-pjax src="./js/main.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music - 用音乐感染人心</title>
+    <link rel="stylesheet" type="text/css" href="./css/APlayer.min.css">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="icon" type="image/x-icon" href="./img/icon.webp">
+    <link rel="apple-touch-icon" href="./img/icon-r.webp">
+    <meta name="apple-mobile-web-app-title" content="音乐">
+    <link rel="bookmark" href="./img/icon.webp">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="./img/icon-r.webp">
+    <meta name="description" content="一个简单好用的音乐播放器。">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        // var _hmt = _hmt || [];
+        // (function() {
+        //   var hm = document.createElement("script");
+        //   hm.src = "https://hm.baidu.com/hm.js?321add3ca0f106525da5526375001161";
+        //   var s = document.getElementsByTagName("script")[0];
+        //   s.parentNode.insertBefore(hm, s);
+        // })();
+    </script>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+     <link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+    <style>
+        @media (max-width: 768px) {
+            .fixed-action-btn {
+                bottom: 26%!important; 
+                right: 2%!important;
+            }
+        }
+    </style>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div id="music_bg"></div>
+    <div id="heoMusic-page">
+    </div>
+      
+    <div class="fixed-action-btn" style="bottom: 12%;">
+        <a class="btn-floating btn-large red">
+            <i class="iconfont icon-list" aria-hidden="true"></i>
+        </a>
+        <ul>
+            <!-- <li><a class="btn-floating red" href="https://cngo.rr.nu" target="_blank"><i class="iconfont icon-list" aria-hidden="true"></i></a></li> -->
+            <li><a class="btn-floating yellow darken-1" href="https://blog.cngo.rr.nu" target="_blank"><i class="iconfont icon-love" aria-hidden="true"></i></a></li>
+            <li><a class="btn-floating green" href="https://cngo.rr.nu" target="_blank"><i class="iconfont icon-home-fill" aria-hidden="true"></i></a></li>
+            <li><a class="btn-floating blue"><i class="iconfont icon-pencil" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+
+    <script>
+        var a = document.querySelector(".btn-floating.blue");
+        a.addEventListener("click", showModal);
+        function showModal(){
+            swal({
+                text: '输入网易或QQ音乐歌单Url\n示例：\n网易：https://music.163.com/#/playlist?id=8152976493\n腾讯：https://y.qq.com/n/ryqq/playlist/7149783625',
+                content: "input",
+                button: {
+                    text: "Get",
+                    closeModal: false,
+                },
+                // buttons: {
+                //     text: "Get",
+                //     cancel: "Close"
+                // }
+            }).then(url => {
+                if (!url) {
+                    throw null;
+                }
+                getPlaylist(url);
+            })
+        }
+        
+        function getPlaylist(url) {
+            const qqRegex = /https:\/\/y\.qq\.com\/n\/ryqq\/playlist\/(\d+)/;
+            const neteaseRegex = /https:\/\/music\.163\.com\/#\/playlist\?id=(\d+)/;
+            let match;
+            if ((match = qqRegex.exec(url)) !== null) {
+                window.location.href = `/?server=tencent&id=${match[1]}`;
+            }
+            else if ((match = neteaseRegex.exec(url)) !== null) {
+                window.location.href = `/?server=netease&id=${match[1]}`;
+            }
+            else if(url == ""){
+                return;
+            }
+            else {
+                swal("Something wrong!", "请输入正确的歌单url", "error");
+                return;
+            }
+        }
+    </script>
+
+    <script>
+        var meting_api = 'https://api.obdo.cc/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+        var userId = "8152976493";
+        var userServer = "netease";
+        var userType = "playlist";
+        if(userServer == "tencent"){
+            meting_api = 'https://meting-api.cncom.dynv6.net/?server=:server&type=:type&id=:id&auth=:auth&r=:r'
+        }
+
+        let params2 = new URLSearchParams(window.location.search);
+        if (params2.get("id") && params2.get("server")) {
+            let server = params2.get("server");
+            if(server == "netease"){
+                meting_api = 'https://api.obdo.cc/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+            }else{
+                meting_api = ''
+            }
+        }
+        //meting_api = 'https://meting-api.cncom.dynv6.net/?server=:server&type=:type&id=:id&auth=:auth&r=:r'
+        // var localMusic = [{
+        //     name: '重生之我在异乡为异客',
+        //     artist: '王睿卓',
+        //     url: '/music/重生之我在异乡为异客.mp3',
+        //     cover: '/music/重生之我在异乡为异客.png',
+        //     lrc: '/music/重生之我在异乡为异客.lrc'
+        // },
+        // {
+        //     name: '落',
+        //     artist: '唐伯虎',
+        //     url: '/music/落.mp3',
+        //     cover: '/music/落.png',
+        //     lrc: '/music/落.lrc'
+        // }
+        // ];
+        // var remoteMusic = "./musiclist.json"
+    </script>
+    <script src="./js/APlayer.min.js"></script>
+    <script async data-pjax src="./js/main.js"></script>
 </body>
+
 </html>
